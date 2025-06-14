@@ -1,9 +1,9 @@
-// import Hero from '@/components/Hero'
+import Hero from '@/components/Hero'
 
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-background">
-			{/* <Hero /> */}
+			<Hero />
 
 			{/* Courses Grid */}
 			<div className="container mx-auto px-4">

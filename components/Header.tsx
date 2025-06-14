@@ -45,7 +45,6 @@ const Header = () => {
 								<span className="hidden md:block">My Courses</span>
 							</Link>
 						</nav>
-					</div>
 					<DarkModeToggle />
 
 					<SignedIn>
@@ -59,6 +58,7 @@ const Header = () => {
 							</Button>
 						</SignInButton>
 					</SignedOut>
+					</div>
 				</div>
 			</div>
 		</header>
