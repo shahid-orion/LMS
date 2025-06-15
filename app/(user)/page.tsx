@@ -1,6 +1,11 @@
+import { CourseCard } from '@/components/CourseCard'
 import Hero from '@/components/Hero'
+import { getCourses } from '@/sanity/lib/courses/getCourses'
 
-export default function Home() {
+export default async function Home() {
+	const courses = await getCourses()
+
+	// console.log('Courses:', courses)
 	return (
 		<div className="min-h-screen bg-background">
 			<Hero />
@@ -16,14 +21,14 @@ export default function Home() {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
-					course Cards
-					{/* {courses.map((course) => (
+					{/* course Cards */}
+					{courses.map((course) => (
 						<CourseCard
 							key={course._id}
 							course={course}
 							href={`/courses/${course.slug}`}
 						/>
-					))} */}
+					))}
 				</div>
 			</div>
 		</div>
