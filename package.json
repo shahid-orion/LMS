@@ -8,7 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"typegen": "sanity schema extract && sanity typegen generate",
-		"watch:sanity": "nodemon --watch ./sanity/schemaTypes --ext ts,js --exec \"npm run typegen\""
+		"watch:sanity": "nodemon --watch ./sanity/schemaTypes --watch ./sanity/lib --ext ts,js --exec \"npm run typegen\""
 	},
 	"dependencies": {
 		"@clerk/nextjs": "^6.21.0",
