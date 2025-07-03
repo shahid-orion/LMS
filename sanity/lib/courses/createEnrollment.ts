@@ -13,7 +13,7 @@ export async function createEnrollment({
 	paymentId,
 	amount
 }: CreateEnrollmentParams) {
-	const enrollment = client.create({
+	const enrollment = await client.create({
 		_type: 'enrollment',
 		student: {
 			_type: 'reference',

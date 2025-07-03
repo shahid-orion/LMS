@@ -64,6 +64,8 @@ export async function createStripeCheckout(courseId: string, userId: string) {
 			throw new Error('Course data is incomplete')
 		}
 
+		const encodedSlug = encodeURIComponent(slug.current!)
+
 		// if course is NOT FREE!
 		// 3. Create and configure Stripe Checkout Session with course details
 		const session = await stripe.checkout.sessions.create({
@@ -82,13 +84,13 @@ export async function createStripeCheckout(courseId: string, userId: string) {
 				}
 			],
 			mode: 'payment',
-			success_url: `${baseUrl}/courses/${slug.current}`,
-			cancel_url: `${baseUrl}/courses/${slug.current}?canceled=true`,
+			// success_url: `${baseUrl}/courses/${slug.current}`,
+			// cancel_url: `${baseUrl}/courses/${slug.current}?canceled=true`,
+			success_url: `${baseUrl}/courses/${encodedSlug}`,
+			cancel_url: `${baseUrl}/courses/${encodedSlug}?canceled=true`,
 			metadata: {
 				courseId: course._id,
 				userId: userId
-				//userId: user._id, // Use Sanity user ID instead of Clerk ID
-				//clerkId: userId // Keep Clerk ID for reference if needed
 			}
 		})
 

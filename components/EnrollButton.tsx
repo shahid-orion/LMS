@@ -24,7 +24,6 @@ function EnrollButton({
 			try {
 				const userId = user?.id
 				if (!userId) return
-
 				const { url } = await createStripeCheckout(courseId, userId)
 				if (url) {
 					router.push(url)

@@ -24,6 +24,8 @@ const CoursePage = async ({ params }: CoursePageProps) => {
 	const isEnrolled =
 		userId && course?._id ? await isEnrolledInCourse(userId, course._id) : false
 
+	// console.log('####### Is Enrolled: ##########', isEnrolled)
+
 	if (!course) {
 		return (
 			<div className="container mx-auto px-4 py-8 mt-16">
