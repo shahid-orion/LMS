@@ -23,7 +23,7 @@ import {
 	GetCompletionsQueryResult,
 	Module
 } from '@/sanity.types'
-import { useSidebar } from '@/components/providers/sidebar-provider'
+import { useSidebar } from '@/components/providers/SidebarProvider'
 import { useEffect, useState } from 'react'
 import {
 	Tooltip,
@@ -43,7 +43,7 @@ interface SidebarProps {
 export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
 	const pathname = usePathname()
 	const { isOpen, toggle, close } = useSidebar()
-	const [isMounted, setIsMounted] = useState(false)
+	// const [isMounted, setIsMounted] = useState(false)
 	const [openModules, setOpenModules] = useState<string[]>([])
 
 	useEffect(() => {
@@ -62,11 +62,12 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
 		}
 	}, [pathname, course, openModules])
 
-	useEffect(() => {
-		setIsMounted(true)
-	}, [])
+	// useEffect(() => {
+	// 	setIsMounted(true)
+	// }, [])
 
-	if (!course || !isMounted) {
+	// if (!course || !isMounted) {
+	if (!course) {
 		return null
 	}
 

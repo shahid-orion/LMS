@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 import { currentUser } from '@clerk/nextjs/server'
 import getCourseById from '@/sanity/lib/courses/getCourseById'
-import { Sidebar } from '@/components/dashboard/sidebar'
+import { Sidebar } from '@/components/dashboard/Sidebar'
 import { getCourseProgress } from '@/sanity/lib/lessons/getCourseProgress'
 import { checkCourseAccess } from '@/lib/auth'
 
@@ -18,6 +18,8 @@ export default async function CourseLayout({
 }: CourseLayoutProps) {
 	const user = await currentUser()
 	const { courseId } = await params
+
+	// console.log('#### COURSE ID ####', courseId)
 
 	if (!user?.id) {
 		return redirect('/')
