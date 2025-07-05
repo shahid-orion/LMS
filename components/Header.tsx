@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import DarkModeToggle from './DarkModeToggle'
 import Link from 'next/link'
@@ -45,19 +47,19 @@ const Header = () => {
 								<span className="hidden md:block">My Courses</span>
 							</Link>
 						</nav>
-					<DarkModeToggle />
+						<DarkModeToggle />
 
-					<SignedIn>
-						<UserButton />
-					</SignedIn>
+						<SignedIn>
+							<UserButton />
+						</SignedIn>
 
-					<SignedOut>
-						<SignInButton mode="modal">
-							<Button variant="outline" size="default">
-								Sign In
-							</Button>
-						</SignInButton>
-					</SignedOut>
+						<SignedOut>
+							<SignInButton mode="modal">
+								<Button variant="outline" size="default">
+									Sign In
+								</Button>
+							</SignInButton>
+						</SignedOut>
 					</div>
 				</div>
 			</div>
